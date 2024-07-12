@@ -2,9 +2,9 @@
 import { useState, useEffect } from 'react';
 import AddTodo from "@/app/components/AddTodo";
 import ViewTodo from "@/app/components/ViewTodo";
-import { getAllTodos, addTodo, updateTodo, deleteTodo } from "../../api";
+import { getAllTodos, addTodo, updateTodo, deleteTodo } from "../../../api";
 
-export default function Home() {
+export default function Home({params}) {
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
@@ -22,7 +22,6 @@ export default function Home() {
 
     const handleUpdate = async (id, updatedTodo) => {
         const updated = await updateTodo(id, updatedTodo);
-        //check id and compare with updated id for error
         setTodos((prevTodos) =>
             prevTodos.map((todo) => (todo.id === id ? updated : todo))
         );
