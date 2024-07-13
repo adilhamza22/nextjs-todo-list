@@ -13,12 +13,13 @@ export default function AddTodo({ onAdd }) {
     return (
         <form onSubmit={handleSubmit}>
             <input
+                style={{background:"white",color:"black",border:"1px solid purple"}} 
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Add new todo"
             />
-            <button type="submit">Add</button>
+            <button  style={{background:"white",color:"black",border:"1px solid purple"}} type="submit">Add</button>
         </form>
     );
 }

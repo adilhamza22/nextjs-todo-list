@@ -1,4 +1,5 @@
 "use client";
+import '../app/styles.css';
 import { useState, useEffect } from 'react';
 import AddTodo from "@/app/components/AddTodo";
 import ViewTodo from "@/app/components/ViewTodo";
@@ -22,7 +23,6 @@ export default function Home() {
 
     const handleUpdate = async (id, updatedTodo) => {
         const updated = await updateTodo(id, updatedTodo);
-        //check id and compare with updated id for error
         setTodos((prevTodos) =>
             prevTodos.map((todo) => (todo.id === id ? updated : todo))
         );

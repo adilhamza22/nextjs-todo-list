@@ -1,4 +1,5 @@
 "use client";
+import '../styles.css';
 import { useState, useEffect } from 'react';
 import AddTodo from "@/app/components/AddTodo";
 import ViewTodo from "@/app/components/ViewTodo";

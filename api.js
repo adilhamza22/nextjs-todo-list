@@ -6,6 +6,12 @@ export const getAllTodos = async () => {
     const tasks = await response.json();
     return tasks;
 }
+export const getTodoByID = async (id) => {
+    const response = await fetch(`${baseURl}/tasks/${id}`);
+    const task = await response.json();
+    return task;
+
+}
 export const addTodo = async (title) => {
     const res = await fetch(`${baseURl}/tasks`, {
         method: 'POST',
